@@ -25,3 +25,5 @@ Open [http://hanishsairohit.github.io/weather_app](http://hanishsairohit.github.
 To build a docker image for development, run the below commands
 
 ### `docker build -f Dockerfile.dev .`
+
+Note: Included .env for evalation purpose. It was not intended to upload it in GitHub
