@@ -14,4 +14,10 @@ To deploy the model, run the below command
 
 ### `npm run deploy`
 
+To build a docker image for development, run the below command
+
+### `rm -rf node_modules`
+
+### `docker build -f Dockerfile.dev .`
+
 Open [http://hanishsairohit.github.io/weather_app](http://hanishsairohit.github.io/weather_app) to view it in the browser.
