@@ -16,9 +16,13 @@ const SearchWeather = (props) => {
   const [cityList, setCityList] = useState([]);
   const [currentInfo, setCurrentInfo] = useState(undefined);
 
+  const api = process.env.REACT_APP_SECRET_KEY;
+
   const getCityWeather = async (city_name) => {
     const { data } = await axios.get(
-      "https://api.weatherapi.com/v1/forecast.json?key=719118a20e3848eeb40141335212111&q=" +
+      "https://api.weatherapi.com/v1/forecast.json?key=" +
+        api +
+        "&q=" +
         city_name +
         "&days=3&aqi=no&alerts=no/"
     );
@@ -201,7 +205,9 @@ const SearchWeather = (props) => {
 
       console.log(location);
       const { data } = await axios.get(
-        "https://api.weatherapi.com/v1/search.json?key=719118a20e3848eeb40141335212111&q=" +
+        "https://api.weatherapi.com/v1/search.json?key=" +
+          api +
+          "&q=" +
           location +
           "/"
       );
