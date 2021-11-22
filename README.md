@@ -2,7 +2,7 @@ To start the project in localhost
 
 or
 
-To Run the app in the development mode.
+To Run the app in development mode.
 
 ### `npm install`
 
