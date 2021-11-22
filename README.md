@@ -2,7 +2,7 @@ To start the project in localhost
 
 or
 
-To Run the app in the development mode.\
+To Run the app in the development mode.
 
 ### `npm install`
 
@@ -13,3 +13,5 @@ Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 To deploy the model, run the below command
 
 ### `npm run deploy`
+
+Open [http://hanishsairohit.github.io/weather_app](http://hanishsairohit.github.io/weather_app) to view it in the browser.
