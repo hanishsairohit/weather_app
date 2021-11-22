@@ -4,13 +4,8 @@ import { Card } from "@mui/material";
 import Typography from "@mui/material/Typography";
 import CardContent from "@mui/material/CardContent";
 import CardMedia from "@mui/material/CardMedia";
-import { CardActionArea, CardActions } from "@mui/material";
-import { maxHeight } from "@mui/system";
 import { TableBody, TableHead, TableRow, Table } from "@mui/material";
-import Carousel from "react-material-ui-carousel";
 import { Container } from "@mui/material";
-import Paper from "material-ui/Paper";
-import List from "material-ui/List";
 import { TableContainer } from "@mui/material";
 import { Helmet } from "react-helmet";
 
