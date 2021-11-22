@@ -23,12 +23,10 @@ const SearchWeather = (props) => {
 
   const getCityWeather = async (city_name) => {
     const { data } = await axios.get(
-      "http://api.weatherapi.com/v1/forecast.json?key=719118a20e3848eeb40141335212111&q=" +
+      "https://api.weatherapi.com/v1/forecast.json?key=719118a20e3848eeb40141335212111&q=" +
         city_name +
-        "&days=3"
+        "&days=3&aqi=no&alerts=no/"
     );
-
-    console.log(data.current.is_day);
 
     let hoursData = [];
 
@@ -68,10 +66,7 @@ const SearchWeather = (props) => {
     hoursData = newHoursData;
 
     const currentComponent = (
-      <div
-        className="currentWeather"
-        style={{ display: "flex", justifyContent: "center", opacity: 0.75 }}
-      >
+      <div className="currentWeather">
         <Helmet>
           <script>
             {
@@ -79,116 +74,124 @@ const SearchWeather = (props) => {
             }
           </script>
         </Helmet>
-        <Card sx={{ maxWidth: 420, maxHeight: 1200 }}>
-          <Typography gutterBottom variant="h5" component="div">
-            {data.location.name}
-          </Typography>
-          <Table>
-            <TableHead>
-              <TableRow class="heading">
-                <TableCell key="1">
-                  {" "}
-                  <span>
-                    <CardMedia
-                      component="img"
-                      height="64"
-                      weight="64"
-                      image={data.current.condition.icon}
-                      alt="weather icon"
-                    />
-                  </span>
-                  <span>{data.current.condition.text}</span>
-                  <br />
-                  <span>{data.current.is_day == 1 ? "Day" : "Night"}</span>
-                </TableCell>
-                <TableCell>
-                  <span class="fahrenheit">{data.current.temp_f} F</span>
-                  <br />
-                  <span> Feels Like {data.current.feelslike_f} F</span>
-                </TableCell>
-              </TableRow>
-            </TableHead>
-          </Table>
-
-          <CardContent>
-            <Typography variant="body2" color="text.secondary">
-              <Table>
-                <TableHead>
-                  <TableRow class="heading">
-                    <TableCell>Wind</TableCell>
-                    <TableCell>Humidity</TableCell>
-                    <TableCell>Visibility</TableCell>
-                  </TableRow>
-                </TableHead>
-                <TableBody>
-                  <TableRow class="body">
-                    <TableCell>{data.current.wind_mph} m/h</TableCell>
-                    <TableCell>{data.current.humidity} %</TableCell>
-                    <TableCell>{data.current.vis_miles} miles</TableCell>
-                  </TableRow>
-                  <TableRow class="heading">
-                    <TableCell></TableCell>
-                    <TableCell>Low</TableCell>
-                    <TableCell>High</TableCell>
-                  </TableRow>
-                  <TableRow>
-                    {" "}
-                    <TableCell>Today</TableCell>
-                    <TableCell>
-                      {data.forecast.forecastday[0].day.mintemp_f + " F"}
-                    </TableCell>
-                    <TableCell>
-                      {data.forecast.forecastday[0].day.maxtemp_f + " F"}
-                    </TableCell>
-                  </TableRow>
-                  <TableRow>
-                    {" "}
-                    <TableCell>Tomorrow</TableCell>
-                    <TableCell>
-                      {data.forecast.forecastday[1].day.mintemp_f + " F"}
-                    </TableCell>
-                    <TableCell>
-                      {data.forecast.forecastday[1].day.maxtemp_f + " F"}
-                    </TableCell>
-                  </TableRow>
-                  <TableRow>
-                    {" "}
-                    <TableCell>Day After Tomorrow</TableCell>
-                    <TableCell>
-                      {data.forecast.forecastday[2].day.mintemp_f + " F"}
-                    </TableCell>
-                    <TableCell>
-                      {data.forecast.forecastday[2].day.maxtemp_f + " F"}
-                    </TableCell>
-                  </TableRow>
-                </TableBody>
-              </Table>
+        <Container
+          style={{
+            display: "flex",
+            justifyContent: "center",
+            opacity: 0.75,
+            alignItems: "center",
+          }}
+        >
+          <Card style={{ maxWidth: 440, maxHeight: 1200 }}>
+            <Typography gutterBottom variant="h5" component="div">
+              {data.location.name}
             </Typography>
-          </CardContent>
-          <TableContainer style={{ maxHeight: 150 }}>
-            <Table stickyHeader>
-              <TableRow>
-                {hoursData.map((hour, idx) => {
-                  return (
-                    <TableCell>
-                      <span>{hour.time}</span>
-                      <span>
-                        <CardMedia
-                          component="img"
-                          height="60"
-                          weight="60"
-                          image={hour.condition.icon}
-                          alt="green iguana"
-                        />
-                      </span>
-                      <span>{hour.temp_f}F </span>
-                    </TableCell>
-                  );
-                })}
-              </TableRow>
+            <Table>
+              <TableHead>
+                <TableRow class="heading">
+                  <TableCell key="1">
+                    {" "}
+                    <span>
+                      <CardMedia
+                        component="img"
+                        height="64"
+                        weight="64"
+                        image={data.current.condition.icon}
+                        alt="weather icon"
+                      />
+                    </span>
+                    <span>{data.current.condition.text}</span>
+                    <br />
+                    <span>{data.current.is_day == 1 ? "Day" : "Night"}</span>
+                  </TableCell>
+                  <TableCell>
+                    <span class="fahrenheit">{data.current.temp_f} F</span>
+                    <br />
+                    <span> Feels Like {data.current.feelslike_f} F</span>
+                  </TableCell>
+                </TableRow>
+              </TableHead>
             </Table>
-          </TableContainer>
-        </Card>
+
+            <CardContent>
+              <Typography variant="body2" color="text.secondary">
+                <Table>
+                  <TableHead>
+                    <TableRow class="heading">
+                      <TableCell>Wind</TableCell>
+                      <TableCell>Humidity</TableCell>
+                      <TableCell>Visibility</TableCell>
+                    </TableRow>
+                  </TableHead>
+                  <TableBody>
+                    <TableRow class="body">
+                      <TableCell>{data.current.wind_mph} m/h</TableCell>
+                      <TableCell>{data.current.humidity} %</TableCell>
+                      <TableCell>{data.current.vis_miles} miles</TableCell>
+                    </TableRow>
+                    <TableRow class="heading">
+                      <TableCell></TableCell>
+                      <TableCell>Low</TableCell>
+                      <TableCell>High</TableCell>
+                    </TableRow>
+                    <TableRow>
+                      {" "}
+                      <TableCell>Today</TableCell>
+                      <TableCell>
+                        {data.forecast.forecastday[0].day.mintemp_f + " F"}
+                      </TableCell>
+                      <TableCell>
+                        {data.forecast.forecastday[0].day.maxtemp_f + " F"}
+                      </TableCell>
+                    </TableRow>
+                    <TableRow>
+                      <TableCell>Tomorrow</TableCell>
+                      <TableCell>
+                        {data.forecast.forecastday[1].day.mintemp_f + " F"}
+                      </TableCell>
+                      <TableCell>
+                        {data.forecast.forecastday[1].day.maxtemp_f + " F"}
+                      </TableCell>
+                    </TableRow>
+                    <TableRow>
+                      {" "}
+                      <TableCell>Day After Tomorrow</TableCell>
+                      <TableCell>
+                        {data.forecast.forecastday[2].day.mintemp_f + " F"}
+                      </TableCell>
+                      <TableCell>
+                        {data.forecast.forecastday[2].day.maxtemp_f + " F"}
+                      </TableCell>
+                    </TableRow>
+                  </TableBody>
+                </Table>
+              </Typography>
+            </CardContent>
+            <TableContainer style={{ maxHeight: 150 }}>
+              <Table stickyHeader>
+                <TableRow>
+                  {hoursData.map((hour, idx) => {
+                    return (
+                      <TableCell>
+                        <span>{hour.time}</span>
+                        <span>
+                          <CardMedia
+                            component="img"
+                            height="60"
+                            weight="60"
+                            image={hour.condition.icon}
+                            alt="green iguana"
+                          />
+                        </span>
+                        <span>{hour.temp_f}F </span>
+                      </TableCell>
+                    );
+                  })}
+                </TableRow>
+              </Table>
+            </TableContainer>
+          </Card>
+        </Container>
       </div>
     );
 
@@ -200,9 +203,12 @@ const SearchWeather = (props) => {
       if (location === "") {
         return;
       }
+
+      console.log(location);
       const { data } = await axios.get(
-        "http://api.weatherapi.com/v1/search.json?key=719118a20e3848eeb40141335212111&q=" +
-          location
+        "https://api.weatherapi.com/v1/search.json?key=719118a20e3848eeb40141335212111&q=" +
+          location +
+          "/"
       );
       setCityList(data);
     }
@@ -242,6 +248,8 @@ const SearchWeather = (props) => {
                   }}
                   style={{
                     color: "black",
+                    backgroundColor: "#d3d3d3",
+                    opacity: 0.9,
                   }}
                 >
                   {cityName.name}
