@@ -1,22 +1,22 @@
 {
   "files": {
     "main.css": "/weather_app/static/css/main.5d344cff.chunk.css",
-    "main.js": "/weather_app/static/js/main.197b2742.chunk.js",
-    "main.js.map": "/weather_app/static/js/main.197b2742.chunk.js.map",
-    "runtime-main.js": "/weather_app/static/js/runtime-main.74f01989.js",
-    "runtime-main.js.map": "/weather_app/static/js/runtime-main.74f01989.js.map",
-    "static/js/2.4ffb5ddc.chunk.js": "/weather_app/static/js/2.4ffb5ddc.chunk.js",
-    "static/js/2.4ffb5ddc.chunk.js.map": "/weather_app/static/js/2.4ffb5ddc.chunk.js.map",
-    "static/js/3.664a29ea.chunk.js": "/weather_app/static/js/3.664a29ea.chunk.js",
-    "static/js/3.664a29ea.chunk.js.map": "/weather_app/static/js/3.664a29ea.chunk.js.map",
+    "main.js": "/weather_app/static/js/main.c41179eb.chunk.js",
+    "main.js.map": "/weather_app/static/js/main.c41179eb.chunk.js.map",
+    "runtime-main.js": "/weather_app/static/js/runtime-main.571c5e6d.js",
+    "runtime-main.js.map": "/weather_app/static/js/runtime-main.571c5e6d.js.map",
+    "static/js/2.6f0fee5b.chunk.js": "/weather_app/static/js/2.6f0fee5b.chunk.js",
+    "static/js/2.6f0fee5b.chunk.js.map": "/weather_app/static/js/2.6f0fee5b.chunk.js.map",
+    "static/js/3.ac320c13.chunk.js": "/weather_app/static/js/3.ac320c13.chunk.js",
+    "static/js/3.ac320c13.chunk.js.map": "/weather_app/static/js/3.ac320c13.chunk.js.map",
     "index.html": "/weather_app/index.html",
     "static/css/main.5d344cff.chunk.css.map": "/weather_app/static/css/main.5d344cff.chunk.css.map",
-    "static/js/2.4ffb5ddc.chunk.js.LICENSE.txt": "/weather_app/static/js/2.4ffb5ddc.chunk.js.LICENSE.txt"
+    "static/js/2.6f0fee5b.chunk.js.LICENSE.txt": "/weather_app/static/js/2.6f0fee5b.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
-    "static/js/runtime-main.74f01989.js",
-    "static/js/2.4ffb5ddc.chunk.js",
+    "static/js/runtime-main.571c5e6d.js",
+    "static/js/2.6f0fee5b.chunk.js",
     "static/css/main.5d344cff.chunk.css",
-    "static/js/main.197b2742.chunk.js"
+    "static/js/main.c41179eb.chunk.js"
   ]
 }
