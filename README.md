@@ -12,7 +12,9 @@ Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
 ---
 
-To deploy the model, run the below command
+To deploy the model, run the below commands
+
+### `npm install`
 
 ### `npm run deploy`
 
@@ -21,7 +23,5 @@ Open [http://hanishsairohit.github.io/weather_app](http://hanishsairohit.github.
 ---
 
 To build a docker image for development, run the below commands
-
-### `rm -rf node_modules`
 
 ### `docker build -f Dockerfile.dev .`
