@@ -16,7 +16,7 @@ const SearchWeather = (props) => {
   const [cityList, setCityList] = useState([]);
   const [currentInfo, setCurrentInfo] = useState(undefined);
 
-  const api = process.env.REACT_APP_SECRET_KEY;
+  const api = process.env.REACT_APP_WEATHER_API_KEY;
 
   const getCityWeather = async (city_name) => {
     const { data } = await axios.get(
